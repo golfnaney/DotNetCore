@@ -8,7 +8,6 @@ namespace demoapi.Controllers {
     [ApiController]
     public class TodoController : ControllerBase {
         private readonly TodoContext _context;
-
         public TodoController (TodoContext context) {
             _context = context;
 
@@ -32,6 +31,19 @@ namespace demoapi.Controllers {
                 return NotFound ();
             }
             return item;
+        }
+        // [HttpPost]
+        // public  ActionResult<ResponseData> ValidateLogin(string id, string name){
+        //     var request_ob = _res.ValidateLogin(id,name);
+        //     if (request_ob == null) {
+        //         return NotFound ();
+        //     }
+        //     return request_ob;
+        // }
+        [HttpPost]
+        public ActionResult<RequestData> PostTest(RequestData model)
+        {
+            return model;
         }
     }
 }
